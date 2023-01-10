@@ -26,14 +26,13 @@ function App() {
   }
 
 
-  const inputElement = useRef(null);
+ 
   
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
       <AppBarr />
-      <br />
       <br />
       <br />
       <br />
@@ -54,25 +53,9 @@ function App() {
           change theme
         </Button>
 
-        <Button ref={inputElement} sx={{marginLeft: "199px"}} variant="contained" onClick={() => {
-          setisOpen(!isOpen)
-        }}>
-          Dashboard
-        </Button>
+ 
 
-        <Menu
-          id="basic-menu"
-          anchorEl={inputElement.current}
-          open={isOpen}
-          onClose={closeMenu}
-          MenuListProps={{
-            "aria-labelledby": "basic-button",
-          }}
-        >
-          <MenuItem onClick={closeMenu}>Profile</MenuItem>
-          <MenuItem onClick={closeMenu}>My account</MenuItem>
-          <MenuItem onClick={closeMenu}>Logout</MenuItem>
-        </Menu>
+ 
       </div>
     </ThemeProvider>
   );
