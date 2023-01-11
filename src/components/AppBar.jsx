@@ -171,9 +171,11 @@ const AppBarr = () => {
 
           <Box sx={{ flexGrow: 1 }} />
 
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-          
+          <Box
+            sx={{ alignItems: "center", display: { xs: "none", md: "flex" } }}
+          >
             <IconButton
+              sx={{ width: "37px", height: "37px" }}
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
@@ -182,7 +184,9 @@ const AppBarr = () => {
                 <MailIcon />
               </Badge>
             </IconButton>
+
             <IconButton
+              sx={{ width: "37px", height: "37px" }}
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
@@ -191,8 +195,7 @@ const AppBarr = () => {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-          
-          
+
             <IconButton
               ref={refMenuBiggerScreen}
               size="large"
@@ -204,7 +207,10 @@ const AppBarr = () => {
               }}
               color="inherit"
             >
-              <Avatar sx={{width: "37px", height: "37px"}} src="./imges/Ali Hassan.JPG" />
+              <Avatar
+                sx={{ width: "37px", height: "37px" }}
+                src="./imges/Ali Hassan.JPG"
+              />
             </IconButton>
           </Box>
 
