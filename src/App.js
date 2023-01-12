@@ -10,6 +10,7 @@ import {
   Divider,
   styled,
   Paper,
+  Box,
 } from "@mui/material";
 import AppBarr from "components/AppBar";
 import { useMemo, useRef, useState } from "react";
@@ -38,24 +39,25 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-
-      <AppBarr />
-
-
-      <Stack sx={{ flexDirection: "row" }}>
-        <MyList setmyMOde={setmyMOde} theme={theme} />
-
-        <Typography sx={{ flexGrow: "3", height: "1111px" }} className="border" variant="h6">
-          box 2
-        </Typography>
-        <Typography sx={{ flexGrow: "2" }} className="border" variant="h6">
-          box 3
-        </Typography>
-      </Stack>
-
- 
-
-
+<Box className={theme.palette.mode}>
+  
+        <AppBarr />
+  
+        <Stack sx={{ flexDirection: "row" }}>
+          <MyList setmyMOde={setmyMOde} theme={theme} />
+  
+          <Typography
+            sx={{ flexGrow: "3", height: "1111px" }}
+            className="border mycolor"
+            variant="h1"
+          >
+            box 2
+          </Typography>
+          <Typography sx={{ flexGrow: "2" }} className="border" variant="h6">
+            box 3
+          </Typography>
+        </Stack>
+</Box>
     </ThemeProvider>
   );
 }

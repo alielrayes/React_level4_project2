@@ -6,4 +6,14 @@
 
 .border{
   border: 3px solid deeppink;
+ 
+}
+
+
+.mycolor{
+  color: red;
+}
+
+.dark .mycolor{
+  color: teal;
 }
