@@ -17,6 +17,7 @@ import { useMemo, useRef, useState } from "react";
 import getDesignTokens from "styles/MyTheme";
 import Grid from "@mui/material/Unstable_Grid2";
 import MyList from "components/List";
+import Posts from "components/Posts";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#9A2555" : "#fff",
@@ -46,13 +47,17 @@ function App() {
         <Stack sx={{ flexDirection: "row" }}>
           <MyList setmyMOde={setmyMOde} theme={theme} />
   
-          <Typography
-            sx={{ flexGrow: "3", height: "1111px" }}
-            className="border mycolor"
-            variant="h1"
-          >
-            box 2
-          </Typography>
+           
+
+
+
+          <Posts />
+
+
+
+
+
+
           <Typography sx={{ flexGrow: "2" }} className="border" variant="h6">
             box 3
           </Typography>
