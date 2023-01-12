@@ -94,23 +94,24 @@ const MyList = ({ setmyMOde, theme }) => {
           );
         })}
 
-        <ListItem>
+        <ListItem disablePadding>
           <ListItemIcon>
-            {theme.palette.mode === "dark" ? <DarkMode /> : <LightMode />}
+            <MaterialUISwitch
+              onChange={() => {
+                localStorage.setItem(
+                  "currentMode",
+                  theme.palette.mode === "dark" ? "light" : "dark"
+                );
+
+                setmyMOde(theme.palette.mode === "light" ? "dark" : "light");
+              }}
+              sx={{ m: 1 }}
+              defaultChecked
+            />
           </ListItemIcon>
-          <ListItemText primary={theme.palette.mode} />
-
-          <MaterialUISwitch
-            onChange={() => {
-              localStorage.setItem(
-                "currentMode",
-                theme.palette.mode === "dark" ? "light" : "dark"
-              );
-
-              setmyMOde(theme.palette.mode === "light" ? "dark" : "light");
-            }}
-            sx={{ m: 1 }}
-            defaultChecked
+          <ListItemText
+            sx={{ textTransform: "capitalize" }}
+            primary={theme.palette.mode}
           />
         </ListItem>
       </List>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -14,7 +14,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { Box } from "@mui/material";
+import { Box, Checkbox, Menu, MenuItem } from "@mui/material";
+import {
+  Bookmark,
+  BookmarkBorder,
+  Favorite,
+  FavoriteBorder,
+} from "@mui/icons-material";
 
 const Posts = () => {
   const myCards = [
@@ -48,6 +54,22 @@ const Posts = () => {
     },
   ];
 
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const renderMenu = (
+    <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+      <MenuItem onClick={handleClose}>Profile</MenuItem>
+      <MenuItem onClick={handleClose}>My account</MenuItem>
+    </Menu>
+  );
+
   return (
     <Box sx={{ flexGrow: "3" }}>
       {myCards.map((item) => {
@@ -60,7 +82,7 @@ const Posts = () => {
                 </Avatar>
               }
               action={
-                <IconButton aria-label="settings">
+                <IconButton onClick={handleClick} aria-label="settings">
                   <MoreVertIcon />
                 </IconButton>
               }
@@ -82,16 +104,24 @@ const Posts = () => {
             </CardContent>
 
             <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-              </IconButton>
+              <Checkbox
+                icon={<FavoriteBorder />}
+                checkedIcon={<Favorite sx={{ color: "red" }} />}
+              />
+
               <IconButton aria-label="share">
                 <ShareIcon />
               </IconButton>
+
+              <Box flexGrow={1} />
+
+              <Checkbox icon={<BookmarkBorder />} checkedIcon={<Bookmark />} />
             </CardActions>
           </Card>
         );
       })}
+
+      {renderMenu}
     </Box>
   );
 };
