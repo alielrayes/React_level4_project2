@@ -137,103 +137,99 @@ const AppBarr = () => {
   );
 
   return (
-    <Box>
-      <AppBar position="static">
-        <Toolbar>
+    <AppBar position="sticky">
+      <Toolbar>
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="open drawer"
+          sx={{ mr: 2 }}
+        >
+          <MenuIcon />
+        </IconButton>
+
+        <Typography
+          variant="h6"
+          noWrap
+          component="div"
+          sx={{ display: { xs: "none", sm: "block" } }}
+        >
+          c4a.dev
+        </Typography>
+
+        <Search>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            placeholder="Search…"
+            inputProps={{ "aria-label": "search" }}
+          />
+        </Search>
+
+        <Box sx={{ flexGrow: 1 }} />
+
+        <Box sx={{ alignItems: "center", display: { xs: "none", md: "flex" } }}>
           <IconButton
+            sx={{ width: "37px", height: "37px" }}
             size="large"
-            edge="start"
+            aria-label="show 4 new mails"
             color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <Badge badgeContent={4} color="error">
+              <MailIcon />
+            </Badge>
           </IconButton>
 
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
+          <IconButton
+            sx={{ width: "37px", height: "37px" }}
+            size="large"
+            aria-label="show 17 new notifications"
+            color="inherit"
           >
-            c4a.dev
-          </Typography>
+            <Badge badgeContent={17} color="error">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
 
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
+          <IconButton
+            ref={refMenuBiggerScreen}
+            size="large"
+            edge="end"
+            aria-label="account of current user"
+            aria-haspopup="true"
+            onClick={() => {
+              setshowBiggerScreenMenu(!showBiggerScreenMenu);
+            }}
+            color="inherit"
+          >
+            <Avatar
+              sx={{ width: "37px", height: "37px" }}
+              src="./imges/Ali Hassan.JPG"
             />
-          </Search>
+          </IconButton>
+        </Box>
 
-          <Box sx={{ flexGrow: 1 }} />
-
-          <Box
-            sx={{ alignItems: "center", display: { xs: "none", md: "flex" } }}
+        <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          <IconButton
+            ref={refMenuMobile}
+            size="large"
+            aria-label="show more"
+            aria-haspopup="true"
+            onClick={() => {
+              setshowMobileMenu(!showMobileMenu);
+            }}
+            color="inherit"
           >
-            <IconButton
-              sx={{ width: "37px", height: "37px" }}
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-
-            <IconButton
-              sx={{ width: "37px", height: "37px" }}
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-
-            <IconButton
-              ref={refMenuBiggerScreen}
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-haspopup="true"
-              onClick={() => {
-                setshowBiggerScreenMenu(!showBiggerScreenMenu);
-              }}
-              color="inherit"
-            >
-              <Avatar
-                sx={{ width: "37px", height: "37px" }}
-                src="./imges/Ali Hassan.JPG"
-              />
-            </IconButton>
-          </Box>
-
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              ref={refMenuMobile}
-              size="large"
-              aria-label="show more"
-              aria-haspopup="true"
-              onClick={() => {
-                setshowMobileMenu(!showMobileMenu);
-              }}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
+            <MoreIcon />
+          </IconButton>
+        </Box>
+      </Toolbar>
 
       {renderMobileMenu}
       {renderMenu}
-    </Box>
+    </AppBar>
   );
 };
 
