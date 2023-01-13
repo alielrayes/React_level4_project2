@@ -10,10 +10,19 @@
 }
 
 
-.mycolor{
-  color: red;
-}
 
-.dark .mycolor{
-  color: teal;
-}
+
+
+@media (max-width: 900px) {
+  .myList{
+    position: fixed;
+      background-color: #121212;
+      top: 59px;
+      bottom: 0;
+      left: 0;
+      z-index: 5;
+  }
+  }
+
+
+

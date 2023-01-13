@@ -63,7 +63,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const MyList = ({ setmyMOde, theme }) => {
+const MyList = ({ setmyMOde, theme, showList, setshowList }) => {
   const myList = [
     { title: "Homepage", icon: <Home /> },
     { title: "Pages", icon: <Article /> },
@@ -76,10 +76,12 @@ const MyList = ({ setmyMOde, theme }) => {
 
   return (
     <Box
+      className="myList"
       sx={{
+        minWidth: "222px",
         bgcolor: theme.palette.favColor.main,
         flexGrow: "2",
-        display: { xs: "none", md: "block" },
+        display: { xs: showList, md: "block" },
       }}
     >
       <List sx={{ position: "fixed" }}>

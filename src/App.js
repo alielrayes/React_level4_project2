@@ -37,15 +37,20 @@ function App() {
       : "dark"
   );
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
-
+  const [showList, setshowList] = useState("none");
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box className={theme.palette.mode}>
-        <AppBarr />
+        <AppBarr showList={showList} setshowList={setshowList} />
 
         <Stack sx={{ flexDirection: "row" }}>
-          <MyList setmyMOde={setmyMOde} theme={theme} />
+          <MyList
+            setmyMOde={setmyMOde}
+            theme={theme}
+            showList={showList}
+            setshowList={setshowList}
+          />
           <Posts />
 
           <RightBar theme={theme} />
