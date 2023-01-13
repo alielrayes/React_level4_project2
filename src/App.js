@@ -18,6 +18,7 @@ import getDesignTokens from "styles/MyTheme";
 import Grid from "@mui/material/Unstable_Grid2";
 import MyList from "components/List";
 import Posts from "components/Posts";
+import RightBar from "components/RightBar";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#9A2555" : "#fff",
@@ -40,29 +41,16 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-<Box className={theme.palette.mode}>
-  
+      <Box className={theme.palette.mode}>
         <AppBarr />
-  
+
         <Stack sx={{ flexDirection: "row" }}>
           <MyList setmyMOde={setmyMOde} theme={theme} />
-  
-           
-
-
-
           <Posts />
 
-
-
-
-
-
-          <Typography sx={{ flexGrow: "2" }} className="border" variant="h6">
-            box 3
-          </Typography>
+          <RightBar theme={theme} />
         </Stack>
-</Box>
+      </Box>
     </ThemeProvider>
   );
 }

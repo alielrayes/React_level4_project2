@@ -78,7 +78,7 @@ const MyList = ({ setmyMOde, theme }) => {
     <Box
       sx={{
         bgcolor: theme.palette.favColor.main,
-        flexGrow: "1.1",
+        flexGrow: "2",
         display: { xs: "none", md: "block" },
       }}
     >
