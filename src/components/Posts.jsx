@@ -24,6 +24,7 @@ import {
 
 const Posts = () => {
   const myCards = [
+    
     {
       letter: "K",
       color: "royalblue",

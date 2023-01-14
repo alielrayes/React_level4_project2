@@ -19,6 +19,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import MyList from "components/List";
 import Posts from "components/Posts";
 import RightBar from "components/RightBar";
+import AddPost from "components/AddPost";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#9A2555" : "#fff",
@@ -55,6 +56,18 @@ function App() {
 
           <RightBar theme={theme} />
         </Stack>
+
+
+
+
+
+<AddPost  />
+
+
+
+
+
+
       </Box>
     </ThemeProvider>
   );
