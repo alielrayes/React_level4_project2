@@ -1,4 +1,4 @@
-import { Box, List, Switch, styled } from "@mui/material";
+import { Box,  List, Switch, styled } from "@mui/material";
 import React from "react";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -7,8 +7,10 @@ import ListItemText from "@mui/material/ListItemText";
 import {
   AccountBox,
   Article,
+ 
   Group,
   Home,
+ 
   Person,
   Settings,
   Storefront,
@@ -73,7 +75,7 @@ const MyList = ({ setmyMOde, theme, showList, setshowList }) => {
 
   return (
     <Box
-      component="nav"
+    component="nav"
       className="myList"
       sx={{
         minWidth: "222px",
@@ -109,9 +111,11 @@ const MyList = ({ setmyMOde, theme, showList, setshowList }) => {
               defaultChecked
             />
           </ListItemIcon>
+        
+        
           <ListItemText
             sx={{ textTransform: "capitalize" }}
-            primary={` ${theme.palette.mode}  mode`}
+            primary={`${theme.palette.mode} mode`}
           />
         </ListItem>
       </List>

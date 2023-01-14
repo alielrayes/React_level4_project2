@@ -10,6 +10,7 @@ import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 
+
 const itemData = [
   {
     img: "https://images.pexels.com/photos/2995336/pexels-photo-2995336.jpeg",
@@ -25,12 +26,13 @@ const itemData = [
   },
 ];
 
-const showLG = { xs: "none", lg: "block" };
+const showLG = { xs: "none", lg: "block" }
 
 const RightBar = ({ theme }) => {
   return (
     <Box
       sx={{
+        
         minWidth: "512px",
         display: showLG,
         flexGrow: "auto",
@@ -39,7 +41,7 @@ const RightBar = ({ theme }) => {
       }}
       component="section"
     >
-      <Box sx={{ position: "fixed" }}>
+<Box sx={{position: "fixed",}}>
         <Typography sx={{ fontWeight: 300 }} mt={2} variant="h6">
           Online Frinds
         </Typography>
@@ -49,13 +51,13 @@ const RightBar = ({ theme }) => {
             alt="Travis Howard"
             src="https://images.pexels.com/photos/3662979/pexels-photo-3662979.jpeg"
           />
-
+  
           <Avatar
             sx={{ width: 49, height: 45 }}
             alt="Remy Sharp"
             src="https://images.pexels.com/photos/1516196/pexels-photo-1516196.jpeg"
           />
-
+  
           <Avatar
             sx={{ width: 49, height: 45 }}
             alt="Agnes Walker"
@@ -67,11 +69,11 @@ const RightBar = ({ theme }) => {
             src="https://images.pexels.com/photos/5951914/pexels-photo-5951914.jpeg"
           />
         </AvatarGroup>
-
+  
         <Typography sx={{ fontWeight: 300 }} my={2} variant="h6">
           Latest Photo
         </Typography>
-
+  
         <ImageList
           gap={10}
           sx={{ width: 500, height: 160, overflowY: "hidden" }}
@@ -90,14 +92,12 @@ const RightBar = ({ theme }) => {
             </ImageListItem>
           ))}
         </ImageList>
-
+  
         <Typography sx={{ fontWeight: 300 }} mb={1} mt={4} variant="h6">
           Latest Conversation
         </Typography>
-
-        <List
-          sx={{ width: "100%", maxWidth: 488, bgcolor: "background.paper" }}
-        >
+  
+        <List sx={{ width: "100%", maxWidth: 488, bgcolor: "background.paper" }}>
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
@@ -170,7 +170,10 @@ const RightBar = ({ theme }) => {
             />
           </ListItem>
         </List>
-      </Box>
+      
+      
+</Box>
+    
     </Box>
   );
 };
