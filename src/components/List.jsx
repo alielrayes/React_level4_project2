@@ -1,4 +1,4 @@
-import { Box, Button, List, Switch, styled } from "@mui/material";
+import { Box, List, Switch, styled } from "@mui/material";
 import React from "react";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -7,11 +7,8 @@ import ListItemText from "@mui/material/ListItemText";
 import {
   AccountBox,
   Article,
-  DarkMode,
   Group,
   Home,
-  LightMode,
-  ModeNight,
   Person,
   Settings,
   Storefront,
@@ -76,6 +73,7 @@ const MyList = ({ setmyMOde, theme, showList, setshowList }) => {
 
   return (
     <Box
+      component="nav"
       className="myList"
       sx={{
         minWidth: "222px",
@@ -107,13 +105,13 @@ const MyList = ({ setmyMOde, theme, showList, setshowList }) => {
 
                 setmyMOde(theme.palette.mode === "light" ? "dark" : "light");
               }}
-              sx={{ m: 1 }}
+              sx={{ mt: 1, mr: 1 }}
               defaultChecked
             />
           </ListItemIcon>
           <ListItemText
             sx={{ textTransform: "capitalize" }}
-            primary={theme.palette.mode}
+            primary={` ${theme.palette.mode}  mode`}
           />
         </ListItem>
       </List>

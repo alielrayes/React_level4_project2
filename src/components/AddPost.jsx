@@ -57,7 +57,7 @@ const AddPost = () => {
 
             position: "fixed",
             bgcolor: theme.palette.background.default,
-            width: 377,
+            width: { xs: "95%", sm: 388 },
           }}
         >
           <Typography
